@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+<pre>'            String.trim()              '</pre>
+<p id="dem"></p>
+<button onclick="strtrm()">String Trim</button>
+
+
+<script>
+    let x = '            String.trim()              ';
+    function strtrm() {        
+        alert(x);
+    }    
+    document.getElementById('dem').innerHTML = x.trim();
+</script>
+
+
+<p><b>Array.forEach? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo"></p>    
+<script>    
+    var company = ['Sign Art', 'Indian Fashion', 'Google'];    
+    var c = '';
+    var com = company.forEach(comFunc);
+    function comFunc(cc){
+        return c += cc + ', ';
+    }
+    document.getElementById('demo').innerHTML = c;
+</script>
+
+<p><b>Array.map? Number = [45, 4, 9, 16, 25]</b></p>
+<p id="demo1"></p>    
+<script>    
+    var company1 = [45, 4, 9, 16, 25];
+    var cm1 = '';
+    var com1 = company1.map(com1Func);
+    function com1Func(c1){
+        return c1 *2;   
+    }
+    document.getElementById('demo1').innerHTML = com1;
+
+</script>
+
+<p><b>Array.filter? company = [45, 4, 9, 16, 25, 100, 75, 54]</b></p>
+<p id="demo2"></p>    
+<script>    
+    var numF = [45, 4, 9, 16, 25, 100, 75, 54];
+    var nmF = numF.filter(nfv);
+    function nfv(nn){
+        return nn > 25;
+    }
+    document.getElementById('demo2').innerHTML = nmF;
+</script>
+
+<p><b>Array.reduce() company = [45, 5, 9]</b></p>
+<p id="demo3"></p>    
+<script>    
+    var numR = [45, 5, 9];
+    var nu = numR.reduce(nrFunc);
+    function nrFunc(tot, valu){
+        return tot += valu;
+    }
+    document.getElementById('demo3').innerHTML = nu;
+</script>
+
+
+<p><b>Array.every()? company = [45, 5, 9]</b></p>
+<p id="demo4"></p>
+<script>    
+    var numE = [45, 5, 9];
+    var ne = numE.every(numeFunc);
+    function numeFunc(valu){
+        return valu > 18;
+    }
+    document.getElementById('demo4').innerHTML = ne;
+</script>
+
+<p><b>Array.indexOf()? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo5"></p>
+<script>    
+    var companyI = ['Sign Art', 'Indian Fashion', 'Google'];
+    var comi = companyI.indexOf('Google');
+    document.getElementById('demo5').innerHTML = comi;
+</script>
+
+<p><b>Array.find()? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo6"></p>
+<script>    
+    var companyF = ['Sign Art', 'Indian Fashion', 'Google'];
+    var cfV = 'Indian Fashion';
+    var comF = companyF.find(comfFunc);
+    function comfFunc(valu){
+        return valu == cfV;
+    }
+    document.getElementById('demo6').innerHTML = comF;
+</script>
+
+
+<p><b>Array.findIndex()? company = [45, 4, 9, 16, 25, 100, 75, 54]</b></p>
+<p id="demo7"></p>
+<script>    
+    var arrFi = [45, 4, 9, 16, 25, 100, 75, 54];
+    
+    var ari = arrFi.findIndex(arFunc);
+    function arFunc(valu){
+        return valu == 18;
+    }
+    document.getElementById('demo7').innerHTML = ari;
+</script>
+
+<p><b>JSON.parse '{"name":"John", "age":30, "city":"New York"}'</b></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+<script>    
+    var jsP = '{"name":"John", "age":30, "city":"New York"}';
+    var jspC = JSON.parse(jsP);
+    document.getElementById('demo8').innerHTML = jspC.name;
+    var jspcS = JSON.stringify(jspC);
+    document.getElementById('demo9').innerHTML = jspcS;
+    
+</script>
+
+<p><b>ES5 lets you define object methods with a syntax that looks like getting or setting a property.</b></p>
+<p id="demo10"></p>
+<p id="demo11"></p>
+<script>
+    var person = {
+        firstname : 'John',
+        lastname : 'Shaw',
+        gender : '',
+        set myAge(valu) {
+            return this.gender = valu.toUpperCase();
+        },
+        get fullname(){
+            return this.firstname + ' ' + this.lastname + ' ' + this.gender;
+        },
+    }
+    person.gender = 'Male';
+    document.getElementById('demo10').innerHTML = person.fullname;
+    document.getElementById('demo11').innerHTML = person.gender;
+</script>
+
+<p><b>ECMAScript 5 allows reserved words as property names:</b></p>
+<p id="demo12"></p>
+<script>
+    var person = {
+        firstname : 'John',
+        var : 'Shaw',        
+    }
+    document.getElementById('demo12').innerHTML = person.var;
+</script>
+
+<p><b>ECMAScript 5 allows property acces on strings:</b></p>
+<p id="demo13"></p>
+<script>
+    var person = 'allows property'
+    document.getElementById('demo13').innerHTML = person[11]; //person.charAt(0);
+</script>
+
+
+<p><b>Object.defineProperty() is a new Object method in ES5.</b></p>
+<p id="demo14"></p>
+<script>
+    //Object.defineProperty
+</script>
+
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

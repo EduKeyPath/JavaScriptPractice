@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+    <p><b>Get Data on click on it</b></p>
+    <a onclick="getData(1)">1</a> | <a onclick="getData(2)">2</a> | <a onclick="getData(3)">3</a>
+    | <a onclick="getData(4)">4</a> | <a onclick="getData(5)">5</a> | <a onclick="getData(6)">6</a>
+    <br/>
+    <p id="nu"></p>
+    <script>
+        function getData(value){
+            if(value == 1){
+                document.getElementById('nu').innerHTML = document.getElementById('nu').innerHTML + '<br/>' +'Floor no. 1';
+            }else if(value == 2){
+                document.getElementById('nu').innerHTML = document.getElementById('nu').innerHTML + '<br/>' +'Floor no. 2';
+            }else if(value == 3){
+                document.getElementById('nu').innerHTML = document.getElementById('nu').innerHTML + '<br/>' +'Flooe no. 3';
+            }else if(value == 4){
+                document.getElementById('nu').innerHTML = document.getElementById('nu').innerHTML + '<br/>' +'Floor no. 4';
+            }else if(value == 5){
+                document.getElementById('nu').innerHTML = document.getElementById('nu').innerHTML + '<br/>' +'Flooe no. 5';
+            }else if(value == 6){
+                document.getElementById('nu').innerHTML = document.getElementById('nu').innerHTML + '<br/>' +'Floor no. 6';
+            }else{
+                document.getElementById('nu').innerHTML = document.getElementById('nu').innerHTML + '<br/>' +'Ground Floor';
+            }
+        }
+    </script>
+
+    <p><b>Check whether number is Even / Odd / Fractional</b></p>
+    <input type="text" name="" value="" id="numb" />
+    <input type="submit" name="" value="Even / Odd / Fractional" onclick="getData2()" />
+    <script>
+        function getData2(){
+            var numV = document.getElementById('numb').value;
+            if(numV%2 == 0){
+                alert('Even');
+            }else if(numV%2 == 1){
+                alert('Odd');
+            }
+            else {
+                alert('Fractional');
+            }
+        }
+    </script>
+
+    
+    <p><b>Check Remainder Value?</b></p>
+    <input type="text" name="" value="" id="numb1" />
+    <input type="text" name="" value="" id="numb2" />
+    <input type="submit" name="" value="Remainder" onclick="getData3()" />
+    
+    <script>
+        function getData3(){
+            var a = parseInt(document.getElementById('numb1').value);
+            var b = parseInt(document.getElementById('numb2').value);
+            var r = a % b;
+            alert('Remainder Result :' + r);
+        }
+    </script>
+
+    
+    <p><b>Number is Prime or not?</b></p>
+    <input type="text" name="" value="" id="numb3" />
+    <input type="submit" name="" value="Is Prime" onclick="isPrime()" />
+    <script>
+        function isPrime(){
+            var pV = document.getElementById('numb3').value;
+            var pV1 = '0';
+            for(i = 2; i < pV; i++){
+                if(pV % i == 0){
+                    pV1++;
+                }
+            }
+            if(pV1 == 0){
+                alert('Prime Number');
+            }else{
+                alert('Not Prime Number');
+            }
+        }
+    </script>
+
+    <p><b>Arrange the number Ascending/ Descending?</b></p>
+    <input type="text" name="" value="" id="n1" onblur="if(this.value == '' || isNaN(this.value)){this.value = 0} " />
+    <input type="text" name="" value="" id="n2" />
+    <input type="text" name="" value="" id="n3" />
+    <input type="text" name="" value="" id="n4" />
+    <input type="text" name="" value="" id="n5" />
+    <select onchange="drADC(value)">
+        <option value="">Select</option>
+        <option value="Ascending">Ascending</option>
+        <option value="Descending">Descending</option>
+    </select>
+    <!-- <select id="drAD">
+        <option>Ascending</option>
+        <option>Descending</option>
+    </select>
+    <input type="button" name="" value="SORT / REVERSE" onclick="SR()" />
+    <input type="button" name="" value="Ascending" onclick="asc()" />
+    <input type="button" name="" value="Descending" onclick="desc()" />-->
+    <p id="nvRe"></p>
+    <script>
+        function drADC(value){
+            var dataArr = [];
+            for(i = 1; i < 6; i++){
+                var dataV = document.getElementById('n' + i).value;
+                dataV = (dataV == '' || isNaN(dataV)) ? 0 : dataV;
+                //document.getElementById('n' + i).value = dataV;
+                dataArr.push(dataV); 
+            }
+            var adV = value;
+            var nvRslt;
+            switch(adV){
+                case 'Ascending' : nvRslt = dataArr.sort(function(a, b){return a - b});
+                document.getElementById('nvRe').innerHTML = nvRslt;
+                break;
+
+                case 'Descending' : nvRslt = dataArr.sort(function(a,b) {return b - a});
+                document.getElementById('nvRe').innerHTML = nvRslt;
+                break;
+            }
+        }
+
+        /*function drADC(value){
+            var nV1 = parseInt(document.getElementById('n1').value);
+            var nV2 = parseInt(document.getElementById('n2').value);
+            var nV3 = parseInt(document.getElementById('n3').value);
+            var nV4 = parseInt(document.getElementById('n4').value);
+            var nV5 = parseInt(document.getElementById('n5').value);        
+            var nVarr = [nV1, nV2, nV3, nV4, nV5]; 
+            var adV = value;
+            var nVRslt;
+
+            switch(adV){
+                case 'Ascending' : nVRslt = nVarr.sort(function(a,b){return a - b});
+                document.getElementById('nvRe').innerHTML = nVRslt;
+                break;
+
+                case 'Descending' : nVRslt = nVarr.sort(function(a,b){return b - a});
+                document.getElementById('nvRe').innerHTML = nVRslt;
+                break;
+            }
+        }*/
+        /*function SR(){
+            var nV1 = parseInt(document.getElementById('n1').value);
+            var nV2 = parseInt(document.getElementById('n2').value);
+            var nV3 = parseInt(document.getElementById('n3').value);
+            var nV4 = parseInt(document.getElementById('n4').value);
+            var nV5 = parseInt(document.getElementById('n5').value);        
+            var nVarr = [nV1, nV2, nV3, nV4, nV5]; 
+            var adV = document.getElementById('drAD').value;
+            var nVRslt;
+
+            switch(adV){
+                case 'Ascending' : nVRslt = nVarr.sort(function(a,b){return a - b});
+                document.getElementById('nvRe').innerHTML = nVRslt;
+                break;
+
+                case 'Descending' : nVRslt = nVarr.sort(function(a,b){return b - a});
+                document.getElementById('nvRe').innerHTML = nVRslt;
+                break;
+            }
+        }*/
+        /*function asc(){
+            var nV1 = parseInt(document.getElementById('n1').value);
+            var nV2 = parseInt(document.getElementById('n2').value);
+            var nV3 = parseInt(document.getElementById('n3').value);
+            var nV4 = parseInt(document.getElementById('n4').value);
+            var nV5 = parseInt(document.getElementById('n5').value);        
+            var nVarr = [nV1, nV2, nV3, nV4, nV5];            
+            var nVRslt;        
+            nVRslt = nVarr.sort(function(a,b){return a - b});
+            document.getElementById('nvRe').innerHTML = nVRslt;
+        }
+        function desc(){
+            var nV1 = parseInt(document.getElementById('n1').value);
+            var nV2 = parseInt(document.getElementById('n2').value);
+            var nV3 = parseInt(document.getElementById('n3').value);
+            var nV4 = parseInt(document.getElementById('n4').value);
+            var nV5 = parseInt(document.getElementById('n5').value);        
+            var nVarr = [nV1, nV2, nV3, nV4, nV5];            
+            var nVRslt;        
+            nVRslt = nVarr.sort(function(a,b){return b - a});
+            document.getElementById('nvRe').innerHTML = nVRslt;
+        }*/
+    </script>
+
+    <p><b>Check the number Alphabetic or Numeric?</b></p>
+    <input type="text" name="" value="" id="NA" />
+    <input type="button" name="" value="Number / Alphabets" onclick="numAlpha()" />
+    <script>
+        function numAlpha(){
+            //var fV = document.getElementById('NA').value;
+            if(isNaN(document.getElementById('NA').value)){
+                alert('The Value is Alphabetic');
+            }else{
+                alert('The Value is Numeric');
+            }
+        }
+    </script>
+
+    <br/><br/>
+    <input type="text" name="" value="" id="exA" />
+    <input type="button" name="" value="@ exists" onclick="existA()" />
+
+    <p><b>@ exist in the text Filed?</b></p>
+    <script>
+        function existA(){
+            var ltrS = document.getElementById('exA').value;
+            var ltrRs = ltrS.indexOf('@');
+            if(ltrRs == -1){
+                alert('@ not exist in the text Filed');
+            }else{
+                alert('@ exist in the text Filed');
+            }
+        }
+    </script>
+
+    <br/><br/>
+    <p><b>write previous text of @</b></p>
+    <input type="email" name="" value="" id="eml" />
+    <input type="button" name="" value="before @ Split" onclick="emlSplt()" />
+    <p id="sEmL"></p>
+    <script>
+        function emlSplt(){
+            var emDt = document.getElementById('eml').value;
+            var emLs = emDt.indexOf('@');
+            if(emLs == -1){
+                document.getElementById('sEmL').innerHTML = '@ not exist in text field';
+            }else{
+                var emS = emDt.substr(0, emLs);
+                document.getElementById('sEmL').innerHTML = emS;
+            }            
+        }
+    </script>
+
+
+
+</body>
+</html>
+

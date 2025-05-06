@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+
+<input type="button" name="" value="Submit" onclick="hello()" />
+<p id="overOut">the numbers in ascending/descending order.</p>
+<p onmouseover="over()" onmouseout="out()" id="txt">After giving numeric values when user clicks submit display the numbers in ascending/descending order.</p>
+
+<script>
+    function hello(){
+        alert('Hello John');
+    }
+    function over(){
+        document.getElementById('txt').style.backgroundColor = 'red';
+        document.getElementById('txt').style.color = '#fff';
+    }
+    function out(){
+        document.getElementById('txt').style.backgroundColor = 'yellow' ;
+        document.getElementById('txt').style.color = 'red';
+    }
+    document.getElementById('overOut').onmouseover = function(){
+        this.style.backgroundColor = "blue";
+    }
+</script>
+
+</body>
+</html>

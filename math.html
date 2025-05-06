@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+<h4>Math.round()</h4>
+<p id="demo"></p>
+<p id="demo3"></p>
+<script>
+    document.getElementById('demo').innerHTML = (457.424).toFixed();
+    document.getElementById('demo3').innerHTML = Math.round(457.424);
+</script>
+
+<h4>Math.pow()</h4>
+<p id="demo1"></p>
+<script>
+    document.getElementById('demo1').innerHTML = Math.pow(3, 4);
+</script>
+
+<h4>Math.sqrt()</h4>
+<p id="demo2"></p>
+<script>
+    document.getElementById('demo2').innerHTML = Math.sqrt(9);
+</script>
+
+<h4>Math.abs()</h4>
+<p id="demo4"></p>
+<script>
+    document.getElementById('demo4').innerHTML = Math.abs(-10.11);
+</script>
+
+<h4>Math.ceil()</h4>
+<p id="demo5"></p>
+<script>
+    document.getElementById('demo5').innerHTML = Math.ceil(4.2);
+</script>
+
+<h4>Math.floor()</h4>
+<p id="demo6"></p>
+<script>
+    document.getElementById('demo6').innerHTML = Math.floor(4.2);
+</script>   
+
+<h4>Math.min()? [250, 100, -50, -100, -350, -87]</h4>
+<p id="demo7"></p>
+<script>
+    var mm = [250, 100, -50, -100, -350, -87];
+    //var mmm = Math.min(...mm);
+    var mmm = Math.min.apply(null, mm);
+    document.getElementById('demo7').innerHTML = mmm;
+</script>
+
+<h4>Math.max()? [250, 100, -50, -100, -350, -87]</h4>
+<p id="demo8"></p>
+<script>
+    var mmX = [250, 100, -50, -100, -350, -87];
+    var mx = Math.max(...mmX);
+    document.querySelector('#demo8').innerHTML = mx;
+</script>
+
+<h4>Math.random()? 0 to 9</h4>
+<p id="demo9"></p>
+<script>
+    var mr = Math.floor(Math.random()*10 + 1);
+    document.querySelector('#demo9').innerHTML = mr;
+</script>
+
+<h4>Math.random()? 15 to 20</h4>
+<p id="demo10"></p>
+<button onclick="mfFunc(0, 200);">Click</button>
+<script>    
+    function mfFunc(min, max){
+        var mF = Math.round(Math.random() * (max - min));
+        document.getElementById('demo10').innerHTML = mF;
+    }
+   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>
+

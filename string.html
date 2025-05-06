@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+<p>
+    "ABCDEFGHIJ\"K\"LMNOPQRSTUVWXYZ" <br/>
+    <b>String Lenght :</b> <span id="sL"></span>
+</p>
+<script>
+    var a = "ABCDEFGHIJ\"K\"LMNOPQRS\\TUVWXYZ"
+    var b = a.length;
+    document.getElementById('sL').innerHTML = b;
+</script>
+
+<p>
+    "The difference is that is substring() cannot accept negative indexes." <br/>
+    <b>Postion of difference (search):</b> <span id="p1"></span> <br/>
+    <b>Postion of is (index of):</b> <span id="p2"></span> <br/>
+    <b>Postion of negative (last index of):</b> <span id="p3"></span> <br/>
+</p>
+
+<script>
+    var c = "The difference is that is substring() cannot accept negative indexes.";
+    var d = c.search('difference');
+    document.getElementById('p1').innerHTML = d;
+
+    var e = c.indexOf('is', 17);
+    document.querySelector('#p2').innerHTML = e;
+
+    var f = c.lastIndexOf('negative');
+    document.querySelector('#p3').innerHTML = f;
+</script>
+
+<p>
+    "The method takes 2 parameters: the starting index (position), and the ending index (position)." <br/>
+    <b>Slice of (method):</b> <span id="s1"></span> <br/>
+    <b>Substring of (takes):</b> <span id="s2"></span> <br/>
+    <b>Substr (parameters):</b> <span id="s3"></span> <br/>
+</p>
+
+<script>
+    var g = "The method takes 2 parameters: the starting index (position), and the ending index (position)."
+    var h = g.slice(4, -50);
+    document.getElementById('s1').innerHTML = h;
+
+    var i = g.substring(11, 16);
+    document.getElementById('s2').innerHTML = i;
+
+    var j = g.substr(19, 10);
+    document.getElementById('s3').innerHTML = j;
+</script>
+
+
+<p>
+    "The ‘with’ keyword is used as a 'kInd' of shorthand for 'kind' an object's 'Kind' or methods." <br/>
+    <b>Replace ‘with’ of SingleReplae:</b> <span id="r1"></span> <br/>
+    <b>Replace 'kind' of Global Replae:</b> <span id="r2"></span> <br/>
+</p>
+<script>
+    var k = "The ‘with’ keyword is used as a 'kInd' of shorthand for 'kind' an object's 'Kind' or methods.";
+    var l = k.replace('with','SingleReplae');
+    document.getElementById('r1').innerHTML = l;
+
+    var m = k.replace(/kind/gi, 'Global Replae');
+    document.getElementById('r2').innerHTML = m;
+</script>
+
+<p>
+    "JavaScript has several built-in or native objects." <br/>
+    <b>Upercase:</b> <span id="u1"></span> <br/>
+    <b>Lowercase:</b> <span id="l2"></span> <br/>
+</p>
+<script>
+    var n = "JavaScript has several built-in or native objects.";
+    var o = n.toUpperCase();
+    var p = n.toLowerCase();
+    document.getElementById('u1').innerHTML = o;
+    document.getElementById('l2').innerHTML = p;
+</script>
+
+<p>
+    "JavaScript Number Object" <br/>
+    "JavaScript Boolean Object" <br/>
+    "JavaScript Number Object" <br/>
+    "JavaScript Boolean Object" <br/>
+    <b>Concat:</b> <span id="c1"></span>
+</p>
+<script>
+    var q = "JavaScript Number Object";
+    var r = "JavaScript Boolean Object";
+    var s = "JavaScript Number Object";
+    var t = "JavaScript Boolean Object";
+    var u = q.concat(r + s + t);
+    document.querySelector('#c1').innerHTML = u;
+</script> 
+
+<p>
+    " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  regular expression instead:" <br/>
+    <b>trim:</b> <span id="t1"></span>
+</p>
+<script>
+    var v = "             regular expression instead:";
+    var w = v.trim();
+    document.getElementById('t1').innerHTML = w;
+</script>
+
+<p>
+    "Extracting String Characters" <br/>
+    <b>Extracting(S) char at:</b> <span id="e1"></span> <br/>
+    <b>Extracting(S) propery access:</b> <span id="e2"></span>
+</p>
+<script>
+    var x = "Extracting String Characters";
+    document.querySelector('#e1').innerHTML = x.charAt(1);
+    document.querySelector('#e2').innerHTML = x[0];
+</script>
+
+<p>
+    "Converting a String to an Array  -  "a,b,c,d,e" <br/>
+    <b>Array:</b> <span id="st1"></span>
+</p>
+<script>
+    var z = "a,b,c,d,e";
+    var zz = z.split(',')
+    document.querySelector('#st1').innerHTML = zz[1];
+</script>
+
+
+<p id="demo"></p>
+<script>
+    var str = "Hello";
+    var arr = str.split("");
+    var text = "";
+    var i;
+    for (i = 0; i < arr.length; i++) {
+        text += arr[i] + "<br>"
+    }
+    document.getElementById("demo").innerHTML = text;
+</script>
+
+<p>You access an array element by referring to the index number.</p>
+<p id="demo5"></p>
+<script>
+    var p = "You access an array, element by referring, to the index number.";
+    var q = p.split(',');
+    /*var q = p.split('');
+    var txt = '';
+    for (i = 0; i < p.length; i++){
+        txt += q[i] + '</br>';
+    }
+    document.getElementById('demo5').innerHTML = txt;*/
+    document.getElementById('demo5').innerHTML = q[0];
+</script>
+
+<p id="demo1"></p>
+<script>
+    var x = 555;
+    var y = x.toString();
+    document.getElementById('demo1').innerHTML = y;
+</script>
+
+<p>toFixed - a = 9.5768589</p>
+<p id="demo3"></p>
+<script>
+    var a = 9.5768589;
+    var b = a.toFixed();
+    var c = a.toFixed(3);
+    document.getElementById('demo3').innerHTML = b;
+</script>
+
+<p>toFixed - a = 9.5768589</p>
+<p id="demo4"></p>
+<script>
+    var a = 9.8768589;
+    var b = a.toPrecision();
+    var c = a.toPrecision(3);
+    var d = parseInt(a.toFixed(2));
+    var e = parseFloat(a.toFixed(2));
+    var f = Number(a.toPrecision(4));
+    document.getElementById('demo4').innerHTML = f;
+</script>
+
+
+
+
+
+
+
+
+
+
+<br/> <br/> <br/> <br/> <br/> <br/> <br/>
+</body>
+</html>

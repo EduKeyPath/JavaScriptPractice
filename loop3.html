@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+
+<p><b>Array.forEach? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo"></p>    
+<script>    
+    var company = ['Sign Art', 'Indian Fashion', 'Google'];
+    var com = '<ul>';
+    for(i=0; i < company.length; i++){
+        com += '<li>' + company[i] + '</li>'
+    }
+    com += '</ul>'
+    document.getElementById('demo').innerHTML = com;
+</script>
+
+<p><b>Array.map? Number = [45, 4, 9, 16, 25]</b></p>
+<p id="demo1"></p>    
+<script>    
+    var company1 = [45, 4, 9, 16, 25];
+    var com1 = '';
+
+    for(i=0; i < company1.length; i++){
+        com1 += company1[i] * company1[i] + ', '
+    }
+    document.querySelector('#demo1').innerHTML = com1;
+</script>
+
+<p><b>Array.filter? company = [45, 4, 9, 16, 25, 100, 75, 54]</b></p>
+<p id="demo2"></p>    
+<script>    
+    var numF = [45, 4, 9, 16, 25, 100, 75, 54];
+    var nm = '';
+
+    for(i = 0; i < numF.length; i++){
+        if(numF[i] < 20){
+            nm += numF[i] + ', '
+        }
+    }
+    document.getElementById('demo2').innerHTML = nm;
+</script>
+
+<p><b>Array.reduce() company = [45, 5, 9]</b></p>
+<p id="demo3"></p>    
+<script>    
+    var numR = [45, 5, 9];
+    var numS = 0;
+
+    for(i=0; i < numR.length; i++){
+        numS += numR[i];
+    }
+    document.getElementById('demo3').innerHTML = numS;
+    
+</script>
+
+
+<p><b>Array.every()? company = [45, 5, 9]</b></p>
+<p id="demo4"></p>
+<script>    
+    var numE = [45, 5, 9, 55, 52];
+    var nuE = 0;
+    for(i=0; i < numE.length; i++){
+        if(numE[i] < 50){
+            nuE ++
+        }
+    }
+    if(nuE > 0){
+        document.getElementById('demo4').innerHTML = 'true';
+    }else{
+        document.getElementById('demo4').innerHTML = 'false';
+    }
+    
+
+</script>
+
+<p><b>Array.indexOf()? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo5"></p>
+<script>    
+    var companyI = ['Sign Art', 'Indian Fashion', 'Google'];
+   
+</script>
+
+<p><b>Array.find()? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo6"></p>
+<script>    
+    var companyF = ['Google', 'Sign Art', 'Indian Fashion', 'Google'];
+    var comF = 0;
+    for(i=0; i < companyF.length; i++){
+        if(companyF[i] == 'Google') {
+            comF++
+        }
+    }
+    if(comF > 0){
+        document.getElementById('demo6').innerHTML = comF;
+    }else{
+        document.getElementById('demo6').innerHTML = 'not exist';
+    }
+    
+</script>
+
+
+<p><b>Array.findIndex()? company = [45, 4, 9, 16, 25, 100, 75, 54]</b></p>
+<p id="demo7"></p>
+<script>    
+    var arrFi = [45, 9,  4,16, 25, 100, 75, 54, 22];
+    var arF = [];
+    for(i=0; i < arrFi.length; i++){
+        /*if(arrFi[i] == 25){
+            arF = i;
+        }*/
+        if(arrFi[i] < 25){
+            arF.push(arrFi[i])
+        }
+    }
+    document.getElementById('demo7').innerHTML = arF.sort(function(a,b){return a - b});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>
+

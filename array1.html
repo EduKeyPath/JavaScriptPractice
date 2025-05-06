@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+
+<p><b>Array Joing, Array Access? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo"></p>    
+<script>    
+    var company = ['Sign Art', 'Indian Fashion', 'Google'];
+    //var company = {first : 'Sign Art', scnd : 'Indian Fashion', thrd : 'Google'};
+    //document.getElementById('demo').innerHTML = company[0]; // company.first;company['first']
+    var c = company.join(' - '); //company.toString();
+    document.getElementById('demo').innerHTML = c;
+</script>
+
+<p><b>Last Array print? var company1 = ['Sign Art', 'Indian Fashion', 'Google'];</b></p>
+<p id="demo2"></p>    
+<script>    
+    var company1 = ['Sign Art', 'Indian Fashion', 'Google'];
+    document.getElementById('demo2').innerHTML = company1[company1.length - 1];
+</script>
+
+<p><b>Print all Array element with loop? var company2 = ['Sign Art', 'Indian Fashion', 'Google'];</b></p>
+<p id="demo3"></p>    
+<script>    
+    var company2 = ['Sign Art', 'Indian Fashion', 'Google'];
+    var com = '<ul>';    
+    for (i = 0; i < company2.length; i++){
+        com += '<li>' + company2[i] + '</li>';
+    }
+    com += '</ul>';
+    document.getElementById('demo3').innerHTML = com;
+</script>
+
+<p><b>Print all Array element with for each? var company2 = ['Sign Art', 'Indian Fashion', 'Google'];</b></p>
+<p id="demo4"></p>    
+<script>    
+    var company3 = ['Sign Art', 'Indian Fashion', 'Google'];
+    var comp = '<ul>'
+    company3.forEach(compFunc);
+
+    function compFunc(da){
+        comp += '<li>' + da + '</li>';
+    }
+    comp += '</ul>';
+    document.getElementById('demo4').innerHTML = comp;  
+</script>
+
+<p><b>Print all Array element with for each? var company2 = ['Sign Art', 'Indian Fashion', 'Google'];</b></p>
+<p id="demo4"></p>    
+<script>    
+    var company3 = ['Sign Art', 'Indian Fashion', 'Google'];
+    var comp = '<ul>'
+    company3.forEach(compFunc);
+
+    function compFunc(da){
+        comp += '<li>' + da + '</li>';
+    }
+    comp += '</br>';
+    document.getElementById('demo4').innerHTML = comp;  
+</script>
+
+<p><b>add element in Array? var company2 = ['Sign Art', 'Indian Fashion', 'Google'];</b></p>
+<p id="demo5"></p>    
+<script>    
+    var company4 = ['Sign Art', 'Indian Fashion', 'Google'];
+    company4.push('IBM');
+    company4[company4.length] = 'CTS';
+    company4[5] = 'TCS';
+    document.getElementById('demo5').innerHTML = company4[company4.length - 1];
+</script>
+
+<h4>Array or Not ?</h4>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>  
+<p id="demo9"></p>
+<p id="demo10"></p>
+<script>    
+    //var company5 = new Array('Sign Art', 'Indian Fashion', 'Google', 'IBM', 'CTS', 'TCS');
+    var company5 = ['Sign Art', 'Indian Fashion', 'Google', 'IBM', 'CTS', 'TCS'];
+    var company6 = {first : 'Sign Art', scnd : 'Indian Fashion', thrd : 'Google', frth : 'IBM', ftfh : 'CTS', sxth : 'TCS'};
+    document.getElementById('demo6').innerHTML = company5[1];
+    document.getElementById('demo7').innerHTML = Array.isArray(company5);
+    document.getElementById('demo8').innerHTML = company5 instanceof Array;
+    document.getElementById('demo9').innerHTML = company6.first;
+    if(company6.length > 0){
+        document.getElementById('demo10').innerHTML = 'Array';
+    }else{
+        document.getElementById('demo10').innerHTML = 'It\'s\ not an Array';
+    }
+</script>
+
+<p><b>add / remove element in Array? var company2 = ['Sign Art', 'Indian Fashion', 'Google'];</b></p>
+<p id="demo11"></p>    
+<script>    
+    var company7 = ['Sign Art', 'Indian Fashion', 'Google'];
+    var co7 = company7.push('IBM');
+    company7[company7.length] = 'CTS';   
+    //company7.pop();
+    var com7 = company7.pop();
+    company7[8] = 'Google';
+    company7.shift();
+    company7.unshift('Accenture');
+    delete company7[0];
+
+    document.getElementById('demo11').innerHTML = company7;
+    //document.getElementById('demo11').innerHTML = co7;
+</script>
+
+<p><b>add / remove element in Array with slice? var company2 = ['Sign Art', 'Indian Fashion', 'Google'];</b></p>
+<p id="demo12"></p>    
+<script>    
+    var company8 = ['Sign Art', 'Indian Fashion', 'Google'];
+    company8.splice(2, 0, 'IBM', 'TCS', 'CTS');
+    company8.splice(1, 2, 'Google');
+    document.getElementById('demo12').innerHTML = company8;
+</script>
+
+<p><b>Concate two/Multiple Array</b></p>
+<p id="demo13"></p>
+<script>
+    var company9 = ['Sign Art', 'Indian Fashion', 'Google'];
+    var company10 = ['IBM', 'TCS', 'CTS'];
+    var company11 = ['Google', 'Microsoft', 'HCL']
+    var com = company9.concat(company10, company11, 'Reliance', 'Tata', ['Accenture', 'lava', 'MI']);
+    document.getElementById('demo13').innerHTML = com;
+</script>
+
+<p><b>Array Slicing</b></p>
+<p id="demo14"></p>
+<script>
+    var company9 = ['Sign Art', 'Indian Fashion', 'Google'];
+    var company10 = ['IBM', 'TCS', 'CTS'];
+    var company11 = ['Google', 'Microsoft', 'HCL']
+    var com = company9.concat(company10, company11, 'Reliance', 'Tata', ['Accenture', 'Lava', 'MI']);
+    var co = com.slice(2);
+    co.sort();
+    document.getElementById('demo14').innerHTML = co;
+</script>
+
+<p><b>Sorting Array in Random Order - [40, 100, 1, 5, 25, 10]</b></p>
+<p id="demo15"></p>
+<script>
+    var points = [40, 100, 1, 5, 25, 10];
+    //points.sort(function(a,b){return a - b});
+    //points.reverse();
+    points.sort(function(a,b){return 0.5 - Math.random()});
+    document.getElementById('demo15').innerHTML = points; //points[points.length - 1] // highest value, points[0] //lowest value
+</script>
+
+<p><b>Sorting Array - var cars = [{type:"Volvo", year:2016},{type:"Saab", year:2001},{type:"BMW", year:2010}];</b></p>
+<p id="demo16"></p>
+<button onclick="srtNum()">Sort Num</button> <button onclick="srtAlph()">Sort Alphaba</button>
+<script>
+    var cars = [{type:"Volvo", year:2016},{type:"Saab", year:2001},{type:"BMW", year:2010},{type:"Jaguar", year:2021}];
+    
+    srtNm();
+    function srtNum(){
+        cars.sort(function(a,b){return a.year - b.year});
+        srtNm();
+    }
+    function srtAlph(){
+        cars.sort(function(a,b){
+            var x = a.type.toLowerCase();
+            var y = b.type.toLowerCase();
+            if(x < y){return -1}
+            if(x > y){return 1} 
+            return 0;            
+        })
+        srtNm();
+    }
+    function srtNm(){
+        document.getElementById('demo16').innerHTML = 
+        cars[0].type + ', ' + cars[0].year + '<br/>' +
+        cars[1].type + ', ' + cars[1].year + '<br/>' +
+        cars[2].type + ', ' + cars[2].year + '<br/>' +
+        cars[3].type + ', ' + cars[3].year;
+    }
+</script>
+
+
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>
+

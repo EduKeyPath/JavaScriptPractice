@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+
+<!--=====Function 1 alert with function======-->
+<input type="button" onclick="sayHello()" value="Say Hello">
+<script>
+    function sayHello()
+    {
+       alert("Hello there!");
+    }
+ </script>
+
+<!--=====Function 2 alert data with function======-->
+<input type="button" onclick="sayHello('Zara', 7)" value="Say Hello">
+<script>
+    function sayHello(name, age)
+    {
+       alert(name + " is " + age + " years old.");
+    }
+ </script>
+
+<!--=====Function 3 print data with var function=====-->    
+<p id="demo"></p>
+<script>
+    function myFunction(a, b) {
+        return a * b;
+    }
+
+    var x = myFunction(4, 3);
+    document.getElementById("demo").innerHTML = x;  
+</script>
+
+<!--=====Function 4 print value with function======-->
+<p id="demo14"></p>
+<script>
+    var a = 4;
+    function myFunction() {
+        document.getElementById("demo14").innerHTML = a * a;
+    }
+</script>
+
+<p id="demo41"></p>
+<script>
+    var x = 7;
+    function myFunc2(a){
+        return a * a;
+    }
+    document.getElementById('demo41').innerHTML = myFunc2(5) * x;
+</script>
+
+<!--=====Function 5 anonymous / function expression======-->
+<p id="demo3"></p>
+<script>
+    var x = function (a, b) {return a * b};
+    document.getElementById("demo3").innerHTML = x(4, 3);
+</script>
+
+<!--=====Function 6 print data with var function======-->
+<p id="demo6"></p>
+<script>
+    function myFunction(a, b) {
+        return a * b;
+    }
+    var x = myFunction(4, 3) * 2;
+    document.getElementById("demo6").innerHTML = x;
+</script>
+
+<!--=====Function 7 object function======-->
+<p id="demo4"></p>
+<script>
+    var person = {
+        firstName: "John",
+        lastName : "Doe",
+        id       : 5566,
+        fullName : function() {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+    document.getElementById("demo4").innerHTML = person.fullName();
+</script>
+
+<!--=====Function 8 concatenate function======-->
+<input type="button" onclick="secondFunction()" value="Call Function">
+<script>
+    function concatenate(first, last)
+    {
+       var full;
+       full = first + last;
+       return full;
+    }    
+    function secondFunction()
+    {
+       var result;
+       result = concatenate('Zara', 'Ali');
+       document.write (result );
+    }
+ </script>
+
+<!--=====Function 9 object constructor call function======-->
+<p id="demo9"></p>
+<script>
+    var person = {
+        fullName: function() {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person1 = {
+        firstName:"John",
+        lastName: "Doe",
+    }
+    var person2 = {
+        firstName:"Mary",
+        lastName: "Doe",
+    }
+    var x = person.fullName.call(person1); 
+    document.getElementById("demo9").innerHTML = x; 
+</script>
+
+<!--=====Function 10 object constructor call function======-->
+<p id="demo11"></p>
+<script>
+    var person = {
+        fullName: function(city, country) {
+            return this.firstName + " " + this.lastName + "," + city + "," + country;
+        }
+    }
+    var person1 = {
+        firstName:"John",
+        lastName: "Doe",
+    }
+    var person2 = {
+        firstName:"Mary",
+        lastName: "Doe",
+    }
+    var x = person.fullName.call(person1, "Oslo", "Norway"); 
+    document.getElementById("demo11").innerHTML = x;
+</script>
+
+<!--=====Function 11 object constructor apply function======-->
+<p id="demo12"></p>
+<script>
+    var person = {
+        fullName: function(city, country) {
+            return this.firstName + " " + this.lastName + "," + city + "," + country;
+        }
+    }
+    var person1 = {
+        firstName:"John",
+        lastName: "Doe",
+    }
+    var x = person.fullName.apply(person1, ["Oslo", "Norway"]); 
+    document.getElementById("demo12").innerHTML = x; 
+</script>
+ 
+<!--=====Function 12 object constructor new function=====-->
+<p id="demo2"></p>
+<script>
+    var myFunction = new Function("a", "b", "return a * b");
+    document.getElementById("demo2").innerHTML = myFunction(4, 3);
+</script>
+
+<!--=====Function 13 consturctor value new function======-->
+<p id="demo8"></p>
+<script>
+    function myFunction(arg1, arg2) {
+        this.firstName = arg1;
+        this.lastName  = arg2;
+    }
+    var x = new myFunction("John","Doe")
+    document.getElementById("demo8").innerHTML = x.firstName; 
+</script>
+
+<!--=====Function 14 self invoke======-->
+<p id="demo">0</p>
+<script>
+    var add = (function () {
+        var counter = 0;
+        return function () {
+            counter += 1; return counter;
+        }
+    })();
+    function myFunction(){
+        document.getElementById("demo").innerHTML = add();
+    }
+</script>
+
+</body>
+</html>
+

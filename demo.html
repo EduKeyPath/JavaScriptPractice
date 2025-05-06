@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>demo</title>
+</head>
+<body>
+<!--
+<p onmouseover="hoveIn()">Anything in the window can be called directly, and in a "global" scope.</p>
+<p onmouseout="hoverOut()">Anything in the window can be called directly, and in a "global" scope.</p>
+
+<script>
+	function hoveIn(){
+		alert('This is Mouse Over text');
+	}
+	function hoverOut(){
+		alert('This is Mouse Out text');
+	}
+</script>
+-->
+<br>
+<script>
+	function chalo(){
+		window.open('https://www.google.com', '_blank');
+	}
+</script>
+<button onClick="chalo()">chalo</button>
+
+<br>
+<script>
+ function dialog(){
+	var remove = confirm('r  u sure to remove');
+	if (remove == true){
+		alert('continue')
+	}
+	else{
+		alert('cancel')	
+	}
+}
+</script>
+
+<button onClick="dialog()">confirm box</button>
+
+<br>
+<script>
+ function prom(){
+	 var retVal = prompt("Enter your name : ", "your name here");
+   document.write("You have entered : " + retVal);
+}
+</script>
+
+<button onClick="prom()">prompt box</button>
+
+
+<br>
+<br>
+
+<button onClick="say()">Click</button>
+
+<script>
+	function say(){
+		window.alert('Hi Function');	
+	}
+</script>
+
+<br>
+<br>
+
+<button onClick="say2('John', '123456789', 'Mumbai')">Click 2</button>
+
+<script>
+	function say2(name, mobile, address){
+		document.write(name + ', ' + mobile + ', ' + address)
+	}
+</script>
+<br>
+<br>
+
+<button onclick="matchFunc()">Click 3</button>
+
+<script>
+	function firstFunc(team1, team2){
+		var verses;
+		verses = team1 + ' Vs '+ team2;
+		return verses;
+	}
+	function matchFunc(){
+		var vs;
+		vs = firstFunc('India', 'Australia');
+		document.write(vs);
+	}
+
+</script>
+
+
+<script>
+	/*var a;
+	var b = 10;
+	var c = 'John';*/
+	
+	//alert(a + b);
+	//alert(x + c);
+
+	//if(a)
+/*
+	var a = 25;
+	var b = 10;
+	var c = 'John';
+	var d = {name:'John', mobile:'123456789'};
+	var e = {
+		name:'John',
+		mobile:'123456789',
+		full : function (){
+			return this.name + this.mobile;
+		}
+	}
+	var f;
+	var g = null;
+	var h = 10 > 9;
+	var next = '<br/><br/>';
+	
+	//alert(h);
+	
+	document.write(e.full() + '<br/>');
+	
+	document.write('var a = 25; <br/>' + 'var b = 10;<br/>' + 'var c = "John";<br/><br/>')
+	
+	document.write('a + b = ')
+	result = a + b;
+	document.write(result);
+	document.write(next);
+	
+	document.write('a - b = ');
+	result = a - b;
+	document.write(result);
+	document.write(next);
+	
+	document.write('a * b = ')
+	result = a * b;
+	document.write(result);
+	document.write(next);
+	
+	document.write('a / b = ')
+	result = a / b;
+	document.write(result);
+	document.write(next);	
+	
+	document.write('a % b = ' + a % b);
+	document.write(next);
+		
+	document.write(a + b + ' ' +  c + next);
+	document.write(c + a + b + next);
+	
+	document.write(a++ + b++);
+	document.write(next);
+	
+	
+	document.write(++a + ++b);*/
+	
+</script>
+
+<br>
+<br>
+
+<script>
+	/*var b = 20;
+	var c = 5;
+	
+	document.write(b += c);
+	document.write('<br/> <br/>');
+	document.write(b *= c );
+	document.write('<br/> <br/>');
+	var hi = 'Hiiiii John';
+	var he = 'Hello John'
+	document.write((b > c) ? hi : 'helooooo');*/
+	
+</script>
+<br>
+<br>
+<!-- Later -->
+
+<p id="demo"></p>
+<script>
+	function team(){
+		var team1 = 'India';
+		var team2 = 'Australia';
+		var matchT = function(){
+			document.write(team1 + team2)
+		}
+	}	
+</script>
+
+<button onclick="team();">Click 3</button>
+<br>
+
+<!-- Later -->
+
+<p id="text"></p>
+<button onClick="say2('John', '123456789', 'Mumbai')">Click 2</button>
+
+<script>
+	function say2(name, mobile, address){
+		return this.name + this.mobile + this.address;
+	}
+	document.getElementById(text).innerHTML = say2();
+</script>
+
+
+
+<!-- Later -->
+<select id="dayS">
+    <option value="Sunday">Sunday</option>
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Saturday">Saturday</option>
+</select>
+<button onclick="changeDay()">Click</button>
+<script>
+	function changeDay(){
+		document.getElementById(dayS).value();
+		alert(value);
+	}
+</script>
+<br>
+<br>
+
+
+<script>
+	var day;
+	day = 'Sunday';
+	
+	switch(day){
+		case 'Sunday' : document.write('Today Sunday');
+		break;
+		
+		case 'Monday' : document.write('Today Monday');
+		break;
+		
+		case 'Tuesday' : document.write('Today Tuesday');
+		break;
+		
+		case 'Wednesday' : document.write('Today Wednesday');
+		break;
+		
+		case 'Thursday' : document.write('Today Thursday');
+		break;
+		
+		case 'Friday' : document.write('Today Friday');
+		break;
+				
+		case 'Saturday' : document.write('Today Saturday');
+		break;
+		
+		default : document.write('Noday');
+		
+	}
+	
+	
+</script>
+
+
+</body>
+</html>

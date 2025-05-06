@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+
+<p><b>Array.forEach? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo"></p>    
+<script>    
+    var company = ['Sign Art', 'Indian Fashion', 'Google'];
+    var com = '<ul>'; 
+    company.forEach(comFunc);    
+    function comFunc(val, index, array){
+        com += '<li>' + val + '</li>';
+        //com += '<li>' + index + '</li>';
+        //com = '<li>' + array + '</li>';
+    }
+    com += '</ul>'
+    document.getElementById('demo').innerHTML = com;
+</script>
+
+<p><b>Array.map? Number = [45, 4, 9, 16, 25]</b></p>
+<p id="demo1"></p>    
+<script>    
+    var company1 = [45, 4, 9, 16, 25];
+    var com1 = '<ul>'; 
+    //company1.forEach(comFunc1);  
+    company1.map(comFunc1);   
+    function comFunc1(val, index, array){
+        com1 += '<li>' + val * val + '</li>';
+    }
+    com1 += '</ul>'
+    document.getElementById('demo1').innerHTML = com1;
+</script>
+
+<p><b>Array.filter? company = [45, 4, 9, 16, 25, 100, 75, 54]</b></p>
+<p id="demo2"></p>    
+<script>    
+    var numF = [45, 4, 9, 16, 25, 100, 75, 54];
+    var nm = 0;
+    var nmm = '';
+    for(i=0; i < numF.length; i++){
+        if(numF[i] < 50){
+            nmm += numF[i] + ', ';
+        }
+    }
+    document.getElementById('demo2').innerHTML = nmm;
+    /*var numFF = numF.filter(numFunc);    
+    function numFunc(valu){
+        return valu < 25
+    }
+    document.getElementById('demo2').innerHTML = numFF;*/
+</script>
+
+<p><b>Array.reduce() company = [45, 5, 9]</b></p>
+<p id="demo3"></p>    
+<script>    
+    var numR = [45, 5, 5];
+    var numRR = numR.reduce(numRFunc);
+
+    function numRFunc(tot, valu){
+        return tot + valu;
+    }
+    document.querySelector('#demo3').innerHTML = numRR;
+</script>
+
+
+<p><b>Array.every()? company = [45, 5, 9]</b></p>
+<p id="demo4"></p>
+<script>    
+    var numE = [45, 5, 9];
+    //var numEE = numE.every(numEFunc);
+    var numEE = numE.some(numEFunc);
+
+    function numEFunc(valu){
+        return valu > 9;
+    }
+    document.querySelector('#demo4').innerHTML = numEE;
+
+</script>
+
+<p><b>Array.indexOf()? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo5"></p>
+<script>    
+    var companyI = ['Sign Art', 'Indian Fashion', 'Google'];
+    var comI = companyI.indexOf('Google');
+    document.getElementById('demo5').innerHTML = comI;
+</script>
+
+<p><b>Array.find()? company = ['Sign Art', 'Indian Fashion', 'Google']</b></p>
+<p id="demo6"></p>
+<script>    
+    var companyF = ['Sign Art', 'Indian Fashion', 'Google'];
+    var comFF = 'Indian Fashion';
+    var comF = companyF.find(comfFund);
+
+    function comfFund(value){
+        return value == comFF;
+    }
+    document.getElementById('demo6').innerHTML = comF;   
+</script>
+
+
+<p><b>Array.findIndex()? company = [45, 4, 9, 16, 25, 100, 75, 54]</b></p>
+<p id="demo7"></p>
+<script>    
+    var arrFi = [45, 4, 9, 16, 25, 100, 75, 54];
+    var arF = arrFi.findIndex(arFunc);
+
+    function arFunc(valu){
+        return valu == 54;
+    }
+    document.getElementById('demo7').innerHTML = arF;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>
+

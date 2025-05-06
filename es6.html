@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+    var x = 55;
+    var y = 55.5;
+    var xx = Number.isInteger(x);
+    var yy = Number.isInteger(y);
+    document.querySelector('#demo').innerHTML = xx;
+    document.querySelector('#demo1').innerHTML = yy;
+</script>
+
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+    var a = "55";
+    var b = "John";
+    var aa = isNaN(a);
+    var bb = isNaN(b);
+    document.querySelector('#demo2').innerHTML = aa;
+    document.querySelector('#demo3').innerHTML = bb;
+</script>
+
+<p id="demo4"></p>
+<p id="demo5"></p>
+<script>
+    var c = 100/10;
+    var d = 10/0;
+    var cc = isFinite(c);
+    var dd = isFinite(d);
+    document.querySelector('#demo4').innerHTML = cc;
+    document.querySelector('#demo5').innerHTML = dd;
+</script>
+
+<p id="demo6"></p>
+<p id="demo7"></p>
+<script>
+    var x = function(firstname, lastname){
+        return firstname + ' ' + lastname;
+    }
+    document.getElementById('demo6').innerHTML = x('John', 'Shaw');
+
+    const ba = (first, last) => first + last;
+    document.getElementById('demo7').innerHTML = ba('Bably', 'Shaw');
+</script>
+
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

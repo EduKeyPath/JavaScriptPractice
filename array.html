@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+    <input type="text" name="" value="" id="numb" />
+    <input type="submit" name="" value="Submit" onclick="getValue()" />
+
+    <script>
+        /*var x = [1,2,3,4,5,6,7,8];
+        var n = 2;
+        if(n == 2){
+            document.write('yes')
+        }else{
+            document.write('No')
+        }*/
+
+        document.write('<br/><br/>' + '<b>Q1: Number Exist or not</b> [1,2,3,4,5,6,7,8]' );
+        function getValue(){
+            var a = document.getElementById('numb').value;
+            var b = 0;
+            var y = [1,2,3,4,5,6,7,8];
+            for(i=0; i < y.length; i++){
+                if(a == y[i]){
+                    b++;
+                }
+            }
+            if(b > 0){
+                document.write('Number Exist in Array');
+            }else{
+                document.write('Number does not Exist in Array');
+            }
+        }
+        
+        document.write('<br/><br/>' + '<b>Q2: Highest Vlue / Lowest value</b> [11,28,13,54,25,16,67,78]' + '<br/><br/>' );        
+        var arr = [11,28,13,54,25,16,67,78];
+        var hv = 0;
+        var lv = '';
+        for(d = 0; d < arr.length; d++ ){
+            if(hv < arr[d]){
+                hv = arr[d];
+            }            
+        }
+        document.write(hv + '<br/>');
+        for(e=0; e < arr.length; e++){
+            if(lv > arr[e] || lv == ''){
+                lv = arr[e];
+            }
+        }
+        document.write(lv + '<br/>');
+    </script>
+    
+    <script>
+        document.write('<br/><br/>' + '<b>Q3: Sort / Reverse</b> [Banana, Apple, Flower, Kela, Lotus, Rose]' + '<br/><br/>' );
+        
+        var srt = ['Banana', 'Apple', 'Flower', 'Kela', 'Lotus', 'Rose'];
+        var rslt = srt.sort();
+        document.write(rslt + '<br/>');
+        document.write(rslt.reverse());
+        
+        document.write('<br/><br/>' + '<b>Q4: Sort / Reverse</b> [25, 18, 45, 88, 75, 63, 33, 69, 3, 8, 9, 1]' + '<br/><br/>' );
+        var srtNum = [25, 18, 45, 88, 75, 63, 33, 69, 3, 8, 9, 1];
+        var rsltNum = srtNum.sort(function(a,b){return a - b });
+        document.write(rsltNum + '<br/>');
+
+        var srtNum2 = [25, 18, 45, 88, 75, 63, 33, 69, 3, 8, 9, 1];
+        var rsltNum2 = srtNum2.sort(function(a,b){ return a - b});
+        document.write(rsltNum2.reverse());
+
+        document.write('<br/><br/>' + '<b>Q5: Sort / Reverse with function</b> [25, 18, 45, 88, 75, 63, 33, 69, 3, 8, 9, 1]' + '<br/><br/>' );
+        var srtNumF = [25, 18, 45, 88, 75, 63, 33, 69, 3, 8, 9, 1];
+        
+
+
+    </script>
+ 
+
+</body>
+</html>
+

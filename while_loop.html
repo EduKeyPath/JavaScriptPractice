@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+<p id="ja"></p>
+<script>
+    var x = 0;
+    while(x < 11){
+        document.getElementById('ja').innerHTML += '<br/>' + x;
+        x++;
+    }
+
+    var arr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
+    var a = 0;
+    while(a < arr.length){
+        document.getElementById('ja').innerHTML += '<br/>' + arr[a];
+        a++;
+    }
+
+    var count = 0;
+    while(count <= 100){
+        document.write(count + '<br/>');
+        count++;
+    }
+</script>
+</body>
+</html>

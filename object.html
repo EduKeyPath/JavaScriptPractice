@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+
+<p id="demo"></p>
+<p id="demo4"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo5"></p>
+<script>
+    var person = {first : 'John', last : 'shaw', age : 25, gender : 'Male'}
+    document.getElementById('demo').innerHTML = person.gender;
+    let a = '';
+    for(x in person){
+        a += person[x] + ' '; 
+    }
+    document.getElementById('demo4').innerHTML = a;
+
+    var employee = new Object();
+    employee.batch1 = 'John, Bably';
+    employee.batch2 = 'Doe, SDoe';
+    employee.batch3 = 'Anuu, Amita';
+    document.getElementById('demo2').innerHTML = employee.batch3;
+
+    var customer = {first : 'Ajay Agarwal', scnd : 'Avijit', thrd : 'Tania'}
+    var x = customer;
+    x.thrd = 'Surjendu';
+    customer.frth = 'Oml'
+    delete x.thrd;
+    document.getElementById('demo3').innerHTML = x.frth + ' ' + customer["thrd"];
+
+    var person2 = {firstname : 'Viresh', lastname : 'Shaw', age :32, gender : 'Male', fullname : function(){return this.firstname + ' ' + this.lastname}}
+    person2.other = function(){
+        return this.age + ' ' + this.gender;
+    }
+    console.log(person2.other());
+</script>
+
+
+<p id="demo6"></p>
+<script>
+    var cus = {
+        firstN : 'Tarun',
+        lastN : 'Paramanik',
+        gender : '',
+        get full(){
+            return this.firstN + ' ' + this.lastN;
+        },
+        set gen(x){
+            return this.gender = x;
+        }  
+    }
+    cus.gen = 'Male'
+    console.log(cus.full + ' is a ' + cus.gender);
+</script>
+
+<p id="demo7"></p>
+<script>
+    var stat = {
+        frst : 'Mumbai',
+        scnd : 'Burdwan',
+        thrd : 'Mumbai',
+        frth : 'Bangalore',
+        city : '',
+        get getCity(){
+            return this.city;
+        },
+        set cityF(valu){
+            this.city = valu;
+        }        
+    }
+    stat.cityF = "London";
+    console.log(stat.getCity + ', ' + stat.city);
+</script>
+
+<p id="demo8"></p>
+<script>
+    var stu = {
+        frst : 'John',
+        scnd : 'Doe',
+        thrd : '',
+        get stuF(){
+            return this.thrd.toUpperCase();
+        },
+        set stusF(valu){
+            return this.thrd = valu;
+        }
+    }
+    stu.stusF = 'Viresh';
+    document.getElementById('demo8').innerHTML = stu.stuF;
+</script>
+
+<p id="demo9"></p>
+<script>
+    function Company(fst,sknd,thd, frt, ffth){
+        this.frstcomp = fst;
+        this.scndcomp = sknd;
+        this.thrdcomp = thd;
+        this.frthcomp = frt;
+        this.ffthcomp = ffth;
+    }
+    var com = new Company('Sing Art', 'Indian Fashion', 'Google', 'Appsbee', 'IBM');
+    document.getElementById('demo9').innerHTML = com.frstcomp;
+</script>
+
+<p id="demo10"></p><p id="demo11"></p>
+<script>
+    function Human(fst,scnd,thrd){
+        this.frsH = fst;
+        this.scndH = scnd;
+        this.thdH = thrd;
+    }
+    var hum = new Human('Suman','Nabojyoti','Bikash');
+    var muh = new Human('John', 'Doe', 'Viresh');
+    muh.accom = 'Viresh';
+    hum.team = function(){
+        return this.frsH + this.scndH + this.thdH;
+    }
+    document.getElementById('demo10').innerHTML = hum.frsH + ', ' + muh.frsH +' ==== ' +hum.frsH + ', ' + hum.scndH + ', ' + hum.thdH + hum.team();
+    document.getElementById('demo11').innerHTML = muh.accom + ', ' + muh.frsH + ', ' + muh.scndH + ', ' + muh.thdH;
+</script>
+
+
+<p id="demo12"></p>
+<script>
+    function Girl(one,two,three){
+        this.onee = one;
+        this.twoo = two;
+        this.threee = three;
+        this.changeOne = function(name){
+            return this.onee = name;
+        }
+    }
+    Girl.prototype.fourr = 'Parna'
+    Girl.prototype.neGrl = function(){
+        return this.onee + ', ' + this.twoo + ', ' + this.threee;
+    }
+    
+    var gl = new Girl('SDoe', 'Riya', 'Aditi');
+    var gl2 = new Girl('Payel', 'Mahuya', 'Moumita');
+    gl.changeOne('Doe');
+    document.getElementById('demo12').innerHTML = gl2.neGrl() + ' ==== ' + gl.onee + ', ' +gl2.twoo + gl.fourr;
+</script>
+
+<p id="demo13"></p>
+<script>
+   function Tour(first, scnd, thrd, frth){
+       this.firstTour = first;
+       this.scndTour = scnd;
+       this.thrdTour = thrd;
+       this.frthTour = frth;
+    }
+    Tour.prototype.sxthTour = "Darjlng";
+    Tour.prototype.Globl = function(){
+        return this.firstTour + this.firstTour;
+    }
+
+    var t = new Tour('Mumbai', 'Gangtok', 'Sikim', 'MP');
+    var tt = new Tour('Tata', 'Raghunathpur', 'London', 'Asansol');
+    t.ffthTour = "Sandakhphu";
+    t.sevenTour = function(){
+        return this.firstTour + this.scndTour + this.thrdTour;
+    }
+
+    document.getElementById('demo13').innerHTML = t.sevenTour() + ', ' + t.Globl() + ', ' + t.sxthTour + ', ' + t.ffthTour + ', ' + t.scndTour;
+</script>
+
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

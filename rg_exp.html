@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<pre id="preTxt">
+Regular expression arguments (instead of string arguments) 
+can be used expression the methods above.
+Regular expression can make your search much more 
+powerful (case insensitive for Expression).
+</pre>
+<pre id="preTxt2"></pre>
+
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+
+<script>
+    var txt = "Regular Expressions can be used to perform all types of text search and Text replace operations."
+    var txtSr = txt.search(/expressions/i);
+    document.getElementById('demo').innerHTML = txtSr;
+
+    var txt2 = 'Use\n a Case insensitive regular\n case to replace Microsoft with W3Schools in a string:'
+    //alert(txt2);
+    var txtSr2 = txt2.search(/case/i);
+    //var txtRp = txtSr2.replace('Johnyt')
+    var txtRp = txt2.replace(/Case/ig, 'John');
+    document.getElementById('demo').innerHTML = txtRp;
+
+    var txt3 = document.getElementById('preTxt').innerHTML;
+    var txtRp2 = txt3.replace(/expression/ig, 'John');
+    document.getElementById('preTxt2').innerHTML = txtRp2;
+
+    var ptrTxt = 'In Ypou JavaScript, the 2011 RegExp object is a 1520 regular';
+    //var ptrSr = /[r]/ig;
+    //var ptRs = ptrTxt.match(ptrSr);
+    //var ptRs = ptrTxt.replace(/[a]/ig, 'John');
+    //var ptRs = ptrTxt.replace(/[1]/ig, '99');
+    var ptRs = ptrTxt.replace(/(x|y)/, 'BNT')
+    document.getElementById('demo2').innerHTML = ptRs;
+
+    var mTchr = 'Metacharacters are characters with are special meaning';
+    var mtchF = mTchr.replace(/a*/, 'BB');
+    document.getElementById('demo3').innerHTML = mtchF;
+
+    var mTstr = 'In JavaScript, the RegExp object is a regular expression';
+    var mT = /J/;
+    document.getElementById('demo4').innerHTML = mT.test(mTstr);
+
+    var x = 'It searches a string For a pattern, and returns true or false, depending on the result.'
+    var y = /for/i;
+    document.getElementById('demo5').innerHTML = y.exec(x);
+    //document.getElementById('demo5').innerHTML = y.test(x);
+    //document.getElementById('demo5').innerHTML = /fdfgdg/.test(x);
+</script>
+
+
+
+</body>
+</html>

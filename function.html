@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    
+<p id="ja"></p>
+
+<button onclick="getData('John','27', 'Male')">Get Data</button>
+<script>
+    function getData(name, age, gender){
+        //document.write(name + ' is ' + age + ' years old. He is a ' + gender + '.');
+        document.getElementById('ja').innerHTML = name + ' is ' + age + ' years old. He is a ' + gender + '.'
+    }
+</script>
+<br/><br/>
+<button onclick="matchTeam()">Concatenate Function</button>
+ <script>
+     function team(team1, team2){
+         var team;
+         team = team1 + ' V/S ' + team2;
+         return team;
+     }
+     function matchTeam(){
+         var matchT;
+         matchT = team('India', 'Australia');
+        //return matchT;
+         document.getElementById('ja').innerHTML = matchT;
+     }
+ </script>
+<br/><br/>
+<button onclick="getFullName()">Get Full Name</button>
+<script>
+    var first = 'John';
+    var last = 'Shaw';
+    var full = function(){
+        return this.first + ' ' +  this.last;
+    }
+    function getFullName(){
+        document.getElementById('ja').innerHTML = full();
+    }
+</script>
+
+<br/><br/>
+<button onclick="getFullName2()">Get Full Name 2</button>
+<script>    
+    function getFullName2(first2, last2){
+        first2 = 'Doe';
+        last2 = 'Singh';
+        document.getElementById('ja').innerHTML = first2 + ' ' + last2;
+    }
+</script>
+
+
+<br/><br/>
+<button onclick="getMovieName()">Concatenate Function2</button>
+<script>    
+    function getMovie(morning, evening, night){
+        var showM = morning + ' ' + evening + ' ' + night;
+        return showM;
+    }
+    function getMovieName(){
+        var movie = getMovie('Dangal', 'Wanted', 'Bahubali');
+        document.getElementById('ja').innerHTML = movie;
+    }
+</script>
+
+<br/><br/>
+<button onclick="getDinnerL()">Concatenate Function3</button>
+<script>
+    var dinner;
+    function getDinnerL(startar, maain, desert){
+        dinner = startar + maain + desert;
+        return dinner;        
+    }
+    document.getElementById('ja').innerHTML = getDinnerL('a', 'b', 'c');
+</script>
+
+<br/><br/>
+
+<button onclick="redirectPage()">Redirect</button>
+<script>
+    function redirectPage(){
+        //window.location.href = 'https://www.google.co.in/';
+        window.open('https://www.google.co.in/', '_blank');
+    }
+    /*(function(){
+        window.open('https://www.google.co.in/', '_blank');
+    })();*/
+</script>
+
+<br/><br/>
+
+<button onclick="autoRedirectPage()">Auto Redirect</button>
+<script>
+    function autoRedirectPage(){
+        window.open('https://www.google.co.in/', '_blank');
+    }
+    //setTimeout('autoRedirectPage()', 1000);
+</script>
+
+<br/><br/>
+
+<button onclick="browserRedirect()">Browser Redirect</button>
+<script>
+    function browserRedirect(){
+        var brRd = navigator.userAgent;
+        alert(brRd);
+        
+    }
+</script>
+
+<br/><br/>
+<button onclick="window.print()">Print Page</button>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

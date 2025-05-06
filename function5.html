@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+
+<!--=====Function 1 alert with function======-->
+<input type="button" onclick="sayHello()" value="Say Hello">
+<script>
+    function sayHello(){
+        alert('helllloo');
+    }
+ </script>
+
+<!--=====Function 2 alert data with function======-->
+<input type="button" onclick="multiPly(2, 2)" value="Say Hello">
+<script>
+    function multiPly(a, b){
+        alert(a * b);
+    }
+ </script>
+
+<!--=====Function 3 print data with var function=====-->    
+<p id="demo"></p>
+<script>
+    var x = function myFunc(a, b){
+        return a * b;
+    }
+    document.getElementById('demo').innerHTML = x(3, 3);
+</script>
+
+<!--=====Function 4 print value with function======-->
+<p id="demo14"></p>
+<script>
+    function myFunc2(a , b){
+        return a * b;
+    }
+    var x = myFunc2(4, 4);
+    document.getElementById('demo14').innerHTML = x;
+</script>
+
+<p id="demo41"></p>
+<script>
+    var a = 6;
+    function myFunc3(a){
+        return a * a;
+    }
+    document.getElementById('demo41').innerHTML = myFunc3(5)*6;
+</script>
+
+<!--=====Function 5 anonymous / function expression======-->
+<p id="demo3"></p>
+<script>
+    var x = function(a , b){
+        return a * b;
+    }
+    document.getElementById('demo3').innerHTML = x(6,6);
+</script>
+
+<!--=====Function 6 print data with var function======-->
+<p id="demo6"></p>
+<script>
+    function myFunc4(a, b){
+        return a * b;
+    }
+    var x = myFunc4(7, 7) * 7;
+    document.getElementById('demo6').innerHTML = x;
+</script>
+
+<!--=====Function 7 object function======-->
+<p id="demo4"></p>
+<script>
+    var person = {
+        firstname : 'John',
+        lastname : 'Shaw',
+        gender : 'Male',
+        fullname : function(){
+            return this.firstname + this.lastname;
+        }
+    }
+    document.getElementById('demo4').innerHTML = person.firstname;
+</script>
+
+<!--=====Function 8 concatenate function======-->
+<p id="demo22"></p>
+<input type="button" onclick="secondFunction()" value="Call Function">
+<script>
+    function myFunc5(first, last){
+        return first + last;
+    }
+    function secondFunction(){ 
+        var x = myFunc5('Abinash', 'Saha');
+        document.getElementById('demo22').innerHTML = x;
+    }
+    
+</script>
+
+<!--=====Function 9 object constructor call function======-->
+<p id="demo9"></p>
+<script>
+    var per = {
+        fullname2 : function(age, city){
+            return this.firstname2 + this.lastname2 + age + city;
+        }
+    }
+    var groupA = {
+        firstname2 : 'Abinash',
+        lastname2 : 'Saha'
+    }
+    var groupB = {
+        firstname2 : 'Aniket',
+        lastname2 : 'Sahu'
+    }
+    var x = per.fullname2.call(groupB, '5', 'Jamshedpur');
+    document.getElementById('demo9').innerHTML = x;
+</script>
+
+<!--=====Function 11 object constructor apply function======-->
+<p id="demo12"></p>
+<script>
+    var te = {
+        fullname3 : function(player1, player2){
+            return this.first2 + this.last2 + player1 + player2;
+        }
+    }
+    var teamA = {
+        first2 : 'India',
+        last2 : 'Australia'
+    }
+    var teamB = {
+        first2 : 'Srilanka',
+        last2 : 'South Africa'
+    }
+    var x = te.fullname3.apply(teamB, ['Aniket', 'Abinash']);
+    document.getElementById('demo12').innerHTML = x;
+</script>
+ 
+<!--=====Function 12 object constructor new function=====-->
+<p id="demo2"></p>
+<script>
+    var x = new Function('a', 'b', 'return a * b');
+    document.getElementById('demo2').innerHTML = x(7, 7);
+</script>
+
+<!--=====Function 13 consturctor value new function======-->
+<p id="demo8"></p>
+<script>
+    function myFunc6( a, b){
+        this.groupA = a;
+        this.groupB = b;
+    }
+    var y = new myFunc6('John', 'Doe');
+    document.getElementById('demo8').innerHTML = y.groupB;
+</script>
+
+
+</body>
+</html>

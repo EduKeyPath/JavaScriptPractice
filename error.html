@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<input type="text" value="" id="fld" />
+<button onclick="btn()">Click</button>
+<p id="demo2"></p>
+
+<p id="demo3"></p>
+
+<script> 
+    try {
+        adddalert('Hello');
+    }
+    catch(test) {
+        document.getElementById('demo').innerHTML = test.message;
+    }
+
+
+    function btn(){
+        var txV = document.getElementById('fld').value;
+        try {
+            if(txV == '') throw 'Fill the text box';
+            if(isNaN(txV)) throw 'not a number';
+            if(txV > 20) throw 'give low number';
+            if(txV < 5) throw 'give high number';
+        }
+        catch(errMsg) {
+            document.getElementById('demo2').innerHTML = errMsg;
+        }
+        finally {
+            document.getElementById('fld').value = '';
+        }
+
+    }
+
+
+    /*function btn(){
+        var fldV = document.getElementById('fld').value;        
+        try {
+            if(fldV == '') throw 'Fill text';
+            if(isNaN(fldV)) throw 'not number';
+            fldV = Number(fldV);
+            if(fldV < 5) throw 'too low';
+            if(fldV > 15) throw 'too high';
+        }
+        catch (err){
+            document.getElementById('demo2').innerHTML = err;
+        }
+    }*/
+
+</script>
+
+
+</body>
+</html>

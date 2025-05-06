@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<style>
+.disableMenu {
+    display: none;
+}
+</style>
+<body>
+<ul id="dropDown">
+    <li>One</li><li>Two</li><li>Three</li><li>Four</li><li>Five</li><li>Six</li>
+</ul>
+
+<p id="pp">This is a paragraph.</p>
+
+<div id="some-element">Hello, world!</div>
+
+<p id="aa">Dynamic style - manipulating CSS with JavaScript - W3C Wiki</p>
+
+<p id="bb">Set and get CSS styles of elements - plainJS</p>
+
+<script>
+    //var theDropDown = document.querySelector("#dropDown");
+    //theDropDown.classList.add("disableMenu");
+
+    var theDropDown = document.querySelector("#dropDown");
+    theDropDown.classList.remove("disableMenu");
+
+    var elem = document.querySelector('#some-element');
+    /*elem.style.color = 'red';
+    elem.style.backgroundColor = 'yellow';*/
+
+    var par = document.querySelector('#pp');
+    par.style.color = 'white';
+    par.style.backgroundColor = 'red';
+
+    var sheet = document.createElement('style');
+    //sheet.innerHTML = "div {border: 2px solid black; color:#fff; background-color: blue; height:50px; text-align:center;}";
+    sheet.innerHTML = "div" +
+    "{border: 2px solid black;" +
+    "color:#fff; background-color: blue;" +
+    "height:50px; text-align:center;}";
+    document.body.appendChild(sheet);
+    
+    /*var sheetToBeRemoved = document.getElementById('some-element');
+    var sheetParent = sheetToBeRemoved.parentNode;
+    sheetParent.removeChild(sheetToBeRemoved);*/
+    
+    var el = document.querySelector('#aa');
+    //el.style.backgroundColor = 'green';
+    //el.style.display = 'block';
+    //el.style['border-radius'] = '5px';
+    el.style.cssText += 'background: green; display: block;';
+
+    function css(el, styles) {
+        for (var property in styles)
+            el.style[property] = styles[property];
+    }
+    // example
+    var el = document.querySelector('#bb');
+    css(el, { background: 'yellow', display: 'block', 'border-radius': '5px' });
+
+    
+</script>
+
+</body>
+</html>

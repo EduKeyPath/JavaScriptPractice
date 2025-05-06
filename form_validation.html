@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>demo</title>
+</head>
+<body>
+
+    <form action="" method="POST" id="" name="" onsubmit="return submitData()">
+        <label>Name</label>
+        <input type="text" name="" value="" id="name" />
+        <br/>
+
+        <label>Email</label>
+        <input type="email" name="" value="" id="email" />
+        <br/>
+
+        <label>Mobile</label>
+        <input type="number" name="" value="" id="number" />
+        <br/>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        function submitData(){
+            if(document.getElementById('name').value == ''){
+                alert('Please Enter name');               
+                document.getElementById('name').focus();
+                 return false;
+            }
+            else if(document.getElementById('email').value == ''){
+                alert('Please Enter Email id');               
+                document.getElementById('email').focus();
+                 return false;
+            }
+            else if (document.getElementById('number').value==''){
+                alert('Please enter mobile no.');                
+                document.getElementById('number').focus();
+                return false;
+            }
+
+
+        }
+    </script>
+
+</body>
+</html>

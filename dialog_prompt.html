@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>demo</title>
+</head>
+<body>
+
+    <br/>
+    <a href="javascript:void(0);" onclick="removeData()">Remove Data</a>
+    <script>
+        function removeData(){
+            if(confirm('u wnat delete data')){
+                alert('data deleted successfull')
+            }else{
+                alert('deleted cancel')
+            }
+        }
+    </script>
+    
+    <br/>
+    <a href="javascript:void(0);" onclick="promptData()">Prompt Data</a>
+    <script>
+        (function promptData(){
+            var pass = prompt('Password:', '');
+            if(pass == 1234){
+                window.location.href = 'https://www.tutorialspoint.com/javascript/javascript_while_loop.htm';
+            }else{
+                alert('Password wrong')
+            }
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+<p id="ja"></p>
+<p id="ja2"></p>
+<p id="ja3"></p>
+<script>
+    var a;
+    for(a = 0; a <10; a++){
+        document.write(a + ' <br/>');
+    }
+
+    var fru = ['Apple', 'Banana', 'Kela', 'Khira', '<br/><br/>'];
+    var k = 0;
+    var le = fru.length;
+    for(; k < le; k++){
+        document.write(fru[k] + '<br/>');
+    }
+
+    var flo = ['Rose', 'Lotus', 'Beli', 'Lili', 'Jasmine', '<br/><br/>']
+    var l = 0;
+    var m = flo.length;
+    for(; l<m;){
+        document.write(flo[l] + ', ');
+        l++
+    }
+
+    var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July','August','Sep','Oct','Nov','Dec'];
+    var b;
+    for(b = 0; b < month.length; b++){
+        document.getElementById('ja').innerHTML += month[b] + '<br/>';
+    }
+
+    var c;
+    for(c = 0; c < 10; c++){
+        document.getElementById('ja2').innerHTML = document.getElementById('ja2').innerHTML + '*' + '<br/>';
+    }
+
+    var d;
+    for(d = 0; d <=10; d++){
+        for(e = 0; e < 10; e++){
+            document.write('*');
+        }  
+        document.write('<br/>')      
+    }
+
+    var e;
+    for(e= 0; e < 10; e++){
+        for(f = 0; f < e; f++ ){
+            document.write('*')
+        }
+        document.write('<br/>')
+    }
+    var g;
+    for(g=10; g>0; g--){
+        for(h = 0; h < g; h++){
+            document.write('*')
+        }
+        document.write('<br/>')
+    }
+
+    var i;
+    for(i=0; i < 8; i++){
+        for(j=0; j < 35; j++){
+            document.getElementById('ja3').innerHTML += '*'
+        }
+        document.getElementById('ja3').innerHTML += '<br/>'
+    }
+
+</script>
+
+<br/><br/><br/>
+<br/><br/><br/>
+<br/><br/><br/>
+<br/><br/><br/>
+<br/><br/><br/>
+<br/><br/><br/>
+</body>
+</html>
